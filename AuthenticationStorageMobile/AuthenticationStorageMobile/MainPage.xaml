@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AuthenticationStorageMobile.MainPage"
+    Title="Login"
+    BackgroundColor="#10253F">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Dalvin Wolff"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Wk 4 Performance Assessment"
+                FontSize="18"
+                TextColor="White"
+                HorizontalOptions="Center" />
+
+            <Label Text="User Name"
+                   TextColor="White" />
+
+            <Entry
+                Placeholder="Enter username"
+                Text="{Binding Username}"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+            <Label Text="Password"
+                   TextColor="White" />
+
+            <Entry
+                Placeholder="Enter password"
+                IsPassword="True"
+                Text="{Binding Password}"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+            <Grid ColumnDefinitions="*,*"
+                  ColumnSpacing="12">
+
+                <Button
+                    Grid.Column="0"
+                    Text="Login"
+                    BackgroundColor="#198754"
+                    TextColor="White"
+                    Command="{Binding LoginCommand}" />
+
+                <Button
+                    Grid.Column="1"
+                    Text="Cancel"
+                    BackgroundColor="#64748B"
+                    TextColor="White"
+                    Command="{Binding CancelCommand}" />
+
+            </Grid>
+
+            <Label
+                Text="{Binding Message}"
+                TextColor="#FFCCCC"
+                HorizontalOptions="Center"
+                FontSize="16" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

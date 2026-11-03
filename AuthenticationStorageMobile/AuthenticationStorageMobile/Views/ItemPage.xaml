@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AuthenticationStorageMobile.Views.ItemPage"
+    Title="Item Storage"
+    BackgroundColor="#10253F">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label Text="Dalvin Wolff"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center" />
+
+            <Label
+                Text="Please provide the following information:"
+                FontSize="17"
+                TextColor="White" />
+
+            <Label Text="Item ID" TextColor="White" />
+
+            <Entry
+                Placeholder="Enter item ID"
+                Text="{Binding ItemID}"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+            <Label Text="Item Name" TextColor="White" />
+
+            <Entry
+                Placeholder="Enter item name"
+                Text="{Binding ItemName}"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+            <Label Text="Item Description" TextColor="White" />
+
+            <Entry
+                Placeholder="Enter description"
+                Text="{Binding ItemDescription}"
+                BackgroundColor="White"
+                TextColor="Black" />
+
+            <Button
+                Text="Save"
+                Command="{Binding SaveCommand}"
+                BackgroundColor="#198754"
+                TextColor="White" />
+
+            <Button
+                Text="Refresh Items"
+                Command="{Binding RefreshCommand}"
+                BackgroundColor="#2563EB"
+                TextColor="White" />
+
+            <Label
+                Text="{Binding Message}"
+                TextColor="#FFFFFF"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Stored Items"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <VerticalStackLayout
+                BindableLayout.ItemsSource="{Binding Items}"
+                Spacing="10">
+
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                            BackgroundColor="White"
+                            Padding="12"
+                            StrokeShape="RoundRectangle 8">
+
+                            <VerticalStackLayout Spacing="5">
+
+                                <Label
+                                    Text="{Binding ItemID}"
+                                    FontAttributes="Bold"
+                                    TextColor="Black" />
+
+                                <Label
+                                    Text="{Binding ItemName}"
+                                    FontSize="17"
+                                    TextColor="Black" />
+
+                                <Label
+                                    Text="{Binding ItemDescription}"
+                                    TextColor="#555555" />
+
+                            </VerticalStackLayout>
+
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
